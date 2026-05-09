@@ -8,6 +8,8 @@ Retorne APENAS JSON válido com exatamente estes campos:
   "get": número (kcal - Gasto Energético Total = TMB × fator de atividade),
   "imc": número (kg/m² com 1 casa decimal),
   "classificacaoImc": string (ex: "Obesidade Grau II"),
+  "riscoCardiometabolico": string (análise de risco baseada na Relação Cintura-Quadril e circunferências, se dados fornecidos, caso contrário null),
+  "composicaoCorporal": string (avaliação baseada no % de gordura ou medidas antropométricas, se fornecidos, caso contrário null),
   "proteinas_g": número (gramas/dia recomendados),
   "carboidratos_g": número (gramas/dia recomendados),
   "gorduras_g": número (gramas/dia recomendados),

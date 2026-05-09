@@ -4,6 +4,7 @@ import { useState, useRef, useCallback } from "react";
 
 const EMPTY_PATIENT = {
   nome: "", idade: "", sexo: "", peso: "", altura: "",
+  cintura: "", quadril: "", pescoco: "", percentualGordura: "",
   diagnostico: "", medicamentos: "", encaminhamento: "", observacoes: "",
   atividadeFisica: "sedentario",
 };
@@ -86,6 +87,10 @@ export function useNutriAI() {
           sexo: ex.sexo || prev.sexo,
           peso: ex.peso ? String(ex.peso) : prev.peso,
           altura: ex.altura ? String(ex.altura) : prev.altura,
+          cintura: ex.cintura ? String(ex.cintura) : prev.cintura,
+          quadril: ex.quadril ? String(ex.quadril) : prev.quadril,
+          pescoco: ex.pescoco ? String(ex.pescoco) : prev.pescoco,
+          percentualGordura: ex.percentualGordura ? String(ex.percentualGordura) : prev.percentualGordura,
           diagnostico: ex.diagnostico || prev.diagnostico,
           medicamentos: ex.medicamentos || prev.medicamentos,
           encaminhamento: ex.encaminhamento || prev.encaminhamento,

@@ -106,6 +106,39 @@ export default function DiagnosisStep({ diagnosis, patient, onEdit, onReset }) {
         </div>
       </Card>
 
+      {/* Anthropometry Analysis */}
+      {(diagnosis.riscoCardiometabolico || diagnosis.composicaoCorporal || patient.cintura) && (
+        <Card style={{ marginBottom: 16 }}>
+          <SectionTitle icon="📏" title="Avaliação Antropométrica" />
+          
+          <div style={{ display: "flex", gap: 8, flexWrap: "wrap", marginBottom: 16 }}>
+            {patient.cintura && <Badge color="gray">Cintura: {patient.cintura}cm</Badge>}
+            {patient.quadril && <Badge color="gray">Quadril: {patient.quadril}cm</Badge>}
+            {patient.pescoco && <Badge color="gray">Pescoço: {patient.pescoco}cm</Badge>}
+            {patient.percentualGordura && <Badge color="blue">Gordura: {patient.percentualGordura}%</Badge>}
+          </div>
+
+          <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
+            {diagnosis.riscoCardiometabolico && (
+              <div style={{ padding: "12px", background: "var(--color-bg-secondary)", borderRadius: "var(--radius-md)", border: "1px solid var(--color-border)" }}>
+                <div style={{ fontWeight: 600, fontSize: 13, marginBottom: 4, color: "var(--color-text-primary)", display: "flex", alignItems: "center", gap: 6 }}>
+                  ❤️ Risco Cardiometabólico
+                </div>
+                <div style={{ fontSize: 13, color: "var(--color-text-secondary)", lineHeight: 1.5 }}>{diagnosis.riscoCardiometabolico}</div>
+              </div>
+            )}
+            {diagnosis.composicaoCorporal && (
+              <div style={{ padding: "12px", background: "var(--color-bg-secondary)", borderRadius: "var(--radius-md)", border: "1px solid var(--color-border)" }}>
+                <div style={{ fontWeight: 600, fontSize: 13, marginBottom: 4, color: "var(--color-text-primary)", display: "flex", alignItems: "center", gap: 6 }}>
+                  💪 Composição Corporal
+                </div>
+                <div style={{ fontSize: 13, color: "var(--color-text-secondary)", lineHeight: 1.5 }}>{diagnosis.composicaoCorporal}</div>
+              </div>
+            )}
+          </div>
+        </Card>
+      )}
+
       {/* Macros */}
       <Card style={{ marginBottom: 16 }}>
         <SectionTitle icon="🥗" title="Distribuição de macronutrientes" />

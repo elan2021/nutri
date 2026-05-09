@@ -119,6 +119,29 @@ export default function FormStep({
         </div>
       </Card>
 
+      {/* Anthropometric data */}
+      <Card style={{ marginBottom: 16 }}>
+        <SectionTitle icon="📏" title="Avaliação Antropométrica (Opcional)" />
+        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "0 16px" }}>
+          <Field label="Cintura (cm)">
+            <Input value={patient.cintura} onChange={setField("cintura")}
+              placeholder="Ex: 85" type="number" />
+          </Field>
+          <Field label="Quadril (cm)">
+            <Input value={patient.quadril} onChange={setField("quadril")}
+              placeholder="Ex: 105" type="number" />
+          </Field>
+          <Field label="Pescoço (cm)">
+            <Input value={patient.pescoco} onChange={setField("pescoco")}
+              placeholder="Ex: 38" type="number" />
+          </Field>
+          <Field label="% Gordura Corporal">
+            <Input value={patient.percentualGordura} onChange={setField("percentualGordura")}
+              placeholder="Ex: 25" type="number" />
+          </Field>
+        </div>
+      </Card>
+
       {/* Clinical data */}
       <Card style={{ marginBottom: 20 }}>
         <SectionTitle icon="🩺" title="Dados clínicos" />
