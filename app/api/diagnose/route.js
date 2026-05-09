@@ -14,6 +14,7 @@ Retorne APENAS JSON válido com exatamente estes campos:
   "condutaNutricional": string (parágrafo detalhado com justificativa clínica, mínimo 3 frases),
   "alertasClinicos": array de strings (cada item é um alerta específico, incluir interações medicamentosas relevantes),
   "planoAlimentarInicial": string (sugestão de distribuição em refeições, use quebras de linha com \\n),
+  "listaSubstituicao": array de objetos (cada objeto com "alimento" como string e "equivalentes" como array de strings),
   "observacoesGerais": string (considerações adicionais sobre o caso)
 }
 

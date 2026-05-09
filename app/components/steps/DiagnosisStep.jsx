@@ -160,6 +160,25 @@ export default function DiagnosisStep({ diagnosis, patient, onEdit, onReset }) {
         </p>
       </Card>
 
+      {/* Substitutions */}
+      {diagnosis.listaSubstituicao?.length > 0 && (
+        <Card style={{ marginBottom: 16 }}>
+          <SectionTitle icon="🔄" title="Lista de Substituição" />
+          <div className="stagger" style={{ display: "flex", flexDirection: "column", gap: 12 }}>
+            {diagnosis.listaSubstituicao.map((item, i) => (
+              <div key={i} className="animate-fadeInUp" style={{ padding: "12px", background: "var(--color-bg-secondary)", borderRadius: "var(--radius-md)", border: "1px solid var(--color-border)" }}>
+                <div style={{ fontWeight: 600, fontSize: 14, marginBottom: 8, color: "var(--color-text-primary)" }}>{item.alimento}</div>
+                <div style={{ display: "flex", flexWrap: "wrap", gap: 6 }}>
+                  {item.equivalentes?.map((eq, j) => (
+                    <Badge key={j} color="gray">{eq}</Badge>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        </Card>
+      )}
+
       {/* General observations */}
       {diagnosis.observacoesGerais && (
         <Card style={{ marginBottom: 20 }}>
